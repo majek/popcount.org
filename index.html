@@ -1,0 +1,16 @@
+---
+layout: main
+---
+
+<overview>
+  <h1>Blog posts</h1>
+  <ul>
+    {% for post in site.posts %}
+    <li class="big">
+      <time datetime="{{ post.date | date: "%F" }}">{{ post.date | date: "%A, %B %d, %Y" }}</time>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</overview>
+

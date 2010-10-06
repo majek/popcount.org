@@ -1,0 +1,46 @@
+---
+layout: main
+---
+<article>
+  <!-- <header> -->
+  <!--   <h1>{{ page.title }}</h1> -->
+  <!--     <time datetime="{{ page.date | date: "%F" }}"> -->
+  <!-- 	{{ page.date | date: "%A, %B %d, %Y" }} -->
+  <!--     </time> -->
+  <!-- </header> -->
+  <section>
+    {{ content }}
+  </section>
+</article>
+
+<!-- <div id="comments_print"> -->
+<!-- <comments id="comments_js"> -->
+<!--   <h3 id="comments">Comments</h3> -->
+<!--   <div id="disqus_thread"></div> -->
+<!--   <script type="text/javascript"> -->
+<!--     {% if site.production == false %} -->
+<!--       var disqus_developer = true; -->
+<!--     {%endif %} -->
+<!--     var disqus_identifier = "{{ page.title }}"; -->
+<!--     (function() { -->
+<!--       var dsq = document.createElement('script'); -->
+<!--       dsq.type = 'text/javascript'; dsq.async = true; -->
+<!--       dsq.src = 'http://countingbits.disqus.com/embed.js'; -->
+<!--       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); -->
+<!--     })(); -->
+<!--   </script> -->
+<!-- </div> -->
+<!-- </comments> -->
+<!-- </div> -->
+
+<div id="noscriptcomments">
+  <noscript>
+    <a href="http://disqus.com/?ref_noscript=countingbits">
+      NoScript friendly comments
+    </a>
+  </noscript>
+  <!-- js available - show the comments box -->
+  <script type="text/javascript">
+    $('#comments_js').css("display", "block");
+  </script>
+</div>

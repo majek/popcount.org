@@ -1,0 +1,65 @@
+---
+layout: nil
+---
+
+<!doctype html>
+<html lang="en">
+  {% assign description = site.description %}
+  {% if page.description %}
+  {%   assign description = page.description %}
+  {% endif %}
+  <head>
+    <meta charset="utf-8"/>
+    {% if page.title %}
+    <title>{{ page.title }} &mdash; {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/style.css?{{ '_includes/main.css' | md5 }}{{ '_includes/lessframework.css' | md5 }}{{ '_includes/pygments.css' | md5 }}" media="all"/>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+    <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' /> -->
+    <link rel="stylesheet" href="/static/fonts/stylesheet.css?0.00" media="all"/>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/favicon-ios.png"/>
+
+    <script src="/static/jquery-1.4.2.min.js"></script>
+
+    {% if site.production and site.google_analytics_id != nil %}
+    {%   include google_analytics.html %}
+    {% endif %}
+
+    <!-- Parts of the design are stolen from:
+	 http://www.impressivewebs.com/how-to-put-a-multi-line-indent-on-a-styled-blockquote/
+	 http://lessframework.com/
+	 http://michaelmonteleone.net/
+      -->
+  </head>
+  <body>
+    <!-- Drop frames. -->
+    <script type="text/javascript" charset="utf-8">
+      if (top.frames.length != 0) { top.location = self.document.location; }
+    </script>
+
+    <a href="/"><header id="header">{{ site.title }}</header></a>
+    <div>
+      {{ content }}
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      $("h1, h2, h3, h4, h5, h6").each(function(i,e) {
+        if(e.id) {
+          var n = '_visible_anchor_' + escape(e.id);
+          $(e).append(" <a class=\"anchor\" href=#"+escape(e.id)+"> &#182;</a>");
+        }
+      });
+    </script>
+  </body>
+</html>

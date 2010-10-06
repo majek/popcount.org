@@ -1,0 +1,41 @@
+title: Counting bits
+url: http://popcount.org
+
+pygments: true
+permalink: pretty
+lsi: false
+
+production: false
+
+maruku:
+  use_tex: true
+  use_divs: true
+  png_dir: _site/images/generated
+  png_url: /images/generated/
+#  png_engine: blahtex
+
+exclude:
+  - Makefile
+  - .git
+  - README
+
+google_analytics_id: UA-283061-9
+
+colors:
+  bgcolor: '#CCCCCC'
+
+dot:
+  out_dir: _site/images/generated
+  out_url: /images/generated
+  opts: -Gbgcolor=transparent -Gtruecolor=true
+
+dotstyle:
+  producer: style="filled", fillcolor="#00ffff"
+  queue: style="filled", fillcolor="red", shape="record"
+  consumer: style="filled", fillcolor="#33ccff"
+
+gnuplot:
+  out_dir: _site/images/generated
+  out_url: /images/generated
+#  opts:
+#    png_opts: font "/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf,10"

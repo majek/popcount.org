@@ -1,0 +1,290 @@
+
+body {
+    background-color: {{ site.colors.bgcolor }};
+    padding-top: 0px;
+    line-height: 1.5em;
+    text-rendering: optimizeLegibility;
+    font: 14px/1.5 'Droid Sans', Tahoma, Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #15317E;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-variant:small-caps;
+}
+
+#header {
+    text-align: center;
+    font-family: 'BebasRegular', sans-serif;
+    color: grey;
+    background-color: #111111;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    color: #CCCCCC;
+    word-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 68px;
+    line-height: 68px;
+    letter-spacing: -2px;
+}
+
+#header:hover {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 1224px) {
+    article > *, comments, overview {
+	margin-left: 144px;
+	max-width: 696px;
+    }
+
+    article blockquote {
+	max-width: 666px; /* 696-30 */
+    }
+}
+
+/* Pre always needs at least 80 chars. */
+article > section > pre {
+    width: 666px;
+}
+
+article header time {
+    display: block;
+    font-style: italic;
+    text-align: center;
+    font-size: 13px;
+}
+
+article header {
+    display: block;
+    margin-bottom: 36px;
+}
+
+article h1, article h2, article h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-variant:small-caps;
+}
+
+article header h1 {
+    margin: 0em;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* table */
+article table {
+    border-collapse: collapse;
+}
+
+article table td, article table th {
+    border: 1px solid #777777;
+    padding: 0px 5px;
+}
+
+/* code */
+article code {
+    background-color: #DDDDDD;
+}
+article pre code {
+    background-color: inherit;
+}
+
+article pre {
+    font-family: 'Droid Sans Mono', monospace;
+    line-height: 1.15em;
+    /* -moz-border-radius: 5px; */
+    /* border-radius: 5px; */
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 5px 0.7em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    display:block;
+}
+
+/* code table */
+article .highlighttable td {
+    border: 0px none;
+    padding: 0px;
+}
+
+article table.highlighttable, article .highlighttable tbody,
+article .highlighttable tr{
+    width:auto;
+    display: block;
+    background-color: #EEEEEE;
+}
+
+/* paragraphs */
+article p {
+    margin-top: 0.3em;
+}
+
+p + p {
+    margin-top: 0.8em;
+}
+
+/* lists */
+article > section > ol, article > section > ul{
+    margin-top: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+article ol, article ul{
+    padding-left: 2.2em;
+}
+
+article li {
+    margin-bottom: 0.3em;
+}
+
+
+article dl, article table {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+article dt {
+    font-weight: bold;
+}
+
+article dd {
+    padding-left: 3em;
+    padding-bottom: 0.2em;
+}
+
+article hr {
+    border: 0;
+    border-bottom: 1px solid #777;
+    height: 1px;
+    display: block;
+}
+
+article .footnotes p {
+    display: inline;
+}
+
+.anchor {
+    margin-left: 0.1em;
+    color: {{ site.colors.bgcolor }};
+    font-weight: lighter;
+}
+
+h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor {
+    color: grey;
+}
+
+h1:hover .anchor:hover, h2 .anchor:hover, h3 .anchor:hover, h4 .anchor:hover {
+    color: #15317E;
+}
+
+@media print {
+    .anchor {
+	display: none !important;
+	color: red;
+    }
+}
+
+article blockquote p {
+    margin: 0px;
+}
+
+article blockquote {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 1px solid #222222;
+    margin: 1em 2em 1em 2em;
+}
+
+/* info */
+article .info {
+    border: 1px solid lightgreen;
+    padding: 0.5em 3em;
+    background-color: #DDDDDD;
+}
+
+/* dot */
+article .dot_bitmap img {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* Overview */
+overview {
+    display: block;
+}
+
+overview time {
+    float: left;
+    width: 220px;
+    font-style: italic;
+    line-height: 36px;
+    font-size: 13px;
+}
+
+overview li {
+    clear: both;
+    quotes:  "«" "»";
+}
+
+overview li a:before {
+  content: open-quote;
+}
+
+overview li a:after {
+  content: close-quote;
+}
+
+
+overview ul {
+    list-style: none outside none;
+}
+
+
+/* Comments */
+comments h3 {
+    padding-bottom: 10px;
+}
+
+comments {
+    display: block;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+#comments_js {
+	display: none;
+}
+
+@media print {
+    #comments_print {
+	display: none;
+    }
+}
+
+
+/* Fix disqus. */
+#dsq-global-toolbar, #dsq-comments-title, .dsq-options, .dsq-moderator-star,
+#dsq-pagination {
+    display: none !important;
+}
+#dsq-new-post h3 {
+    font-size: 18px;
+}
+@media print {
+    #dsq-new-post, .dsq-comment-footer {
+	display: none !important;
+    }
+}
